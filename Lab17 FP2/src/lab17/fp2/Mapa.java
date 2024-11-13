@@ -3,6 +3,7 @@ package lab17.fp2;
 import java.util.*;
 public class Mapa {
     private static final int FILAS=10,COLUMNAS=10;
+    private static String tipoMapa;
     private static Ejercito[][] mapaEjercitos=new Ejercito[FILAS][COLUMNAS];
     private static Soldado[][] mapaSoldados=new Soldado[FILAS][COLUMNAS];
 
@@ -12,6 +13,27 @@ public class Mapa {
 
     public static Soldado[][] getMapaSoldados() {
         return mapaSoldados;
+    }
+    
+    public static void crearTipoMapa(){
+        Random r=new Random();
+        switch (r.nextInt()){
+            case 1:
+                tipoMapa="bosque";
+                break;
+            case 2:
+                tipoMapa="abierto";
+                break;
+            case 3:
+                tipoMapa="montaña";
+                break;
+            case 4:
+                tipoMapa="desierto";
+                break;
+            case 5:
+                tipoMapa="playa";
+                break;
+        }
     }
     
     public static void crearMapaEjercito(Ejercito[] reino1,Ejercito[] reino2){
